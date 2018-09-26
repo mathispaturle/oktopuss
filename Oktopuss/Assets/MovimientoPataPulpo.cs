@@ -7,9 +7,10 @@ public class MovimientoPataPulpo : MonoBehaviour {
     private Rigidbody rb;
     public float speed;
     int pathGoes;
-    
-	// Use this for initialization
-	void Start () {
+    float i = 0;
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         pathGoes = Random.Range(0, 3);
     }
@@ -20,7 +21,17 @@ public class MovimientoPataPulpo : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, path[pathGoes].position, step);
             if (transform.position == path[pathGoes].position)
             {
-             RandomMe(); 
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y,0);
+            
+                 if (i >= 5.0f)
+                  { 
+                     RandomMe();
+                       i = 0;
+                  }
+                  else
+                  {
+                     i += Time.deltaTime;
+                  }
             }       
 	}
 
