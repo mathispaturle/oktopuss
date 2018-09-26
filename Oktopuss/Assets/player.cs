@@ -12,7 +12,9 @@ public class player : MonoBehaviour {
 
 	public Text scoreText;
 	public Image[] inputsUser;
+	public Image[] deathImages;
 
+	Quaternion rotation;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,14 @@ public class player : MonoBehaviour {
 
 		float h = speed * Input.GetAxis("Horizontal");
 		float v = speed * Input.GetAxis("Vertical");
+
+		/*this.transform.eulerAngles = new Vector3(
+			this.transform.eulerAngles.x,
+			this.transform.eulerAngles.y * v * 90,
+			this.transform.eulerAngles.z * h * 90
+		);*/
+
+
 
 		if (Input/*.GetButtonDown("Fire3")*/.GetKeyDown("space")) {
 			rb.AddForce( new Vector3 (h * speed, v * speed, 0));

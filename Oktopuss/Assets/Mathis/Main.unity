@@ -11961,6 +11961,10 @@ MonoBehaviour:
   - {fileID: 582408230}
   - {fileID: 904696021}
   - {fileID: 107979956}
+  deathImages:
+  - {fileID: 1269481715}
+  - {fileID: 1942779683}
+  - {fileID: 1813013503}
 --- !u!54 &1736060906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12914,7 +12918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1959355027
 RectTransform:
   m_ObjectHideFlags: 0

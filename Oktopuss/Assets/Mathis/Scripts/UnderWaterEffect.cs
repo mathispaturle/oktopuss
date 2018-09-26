@@ -15,17 +15,13 @@ public class UnderWaterEffect : MonoBehaviour {
 	private Material defaultSkybox = RenderSettings.skybox;
 	private Material noSkybox;
 
-	void Start () {
+	void Awake () {
 		//Set the background color
 		Camera.main.backgroundColor = new Color(0.22f, 0.64f, 0.77f, 0.6f);
 		RenderSettings.fog = true;
 		RenderSettings.fogColor = new Color(0.22f, 0.64f, 0.77f, 0.6f);
-		RenderSettings.fogDensity = 0.005f;
+		RenderSettings.fogDensity = 0.0055f;
 		RenderSettings.fogMode = FogMode.Exponential;
 		RenderSettings.skybox = noSkybox;
-	}
-
-	void Update () {
-		
 	}
 }
