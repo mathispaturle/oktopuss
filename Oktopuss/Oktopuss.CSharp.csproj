@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Mathis\Scripts\UnderWaterEffect.cs" />
+    <Compile Include="Assets\MovimientoPataPulpo.cs" />
     <Compile Include="Assets\player.cs" />
     <Compile Include="Assets\sineMovement.cs" />
   </ItemGroup>
