@@ -14,11 +14,13 @@ public class player : MonoBehaviour {
 	public Image[] inputsUser;
 	public Image[] deathImages;
 
-	Quaternion rotation;
+	Vector3 spawnPoint;
+	int deaths = 0;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		spawnPoint = this.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -98,6 +100,11 @@ public class player : MonoBehaviour {
 			collected = 0;
 			//print ("Your score is: " + score);
 		}
+
+		if (col.gameObject.tag == "pulpo") {
+			print ("Hoy comemos humano...");
+			CheckIfGameOver ();
+		}
 	}
 
 	void OnTriggerStay(Collider col){
@@ -109,6 +116,23 @@ public class player : MonoBehaviour {
 				print (collected);
 			}
 		}
+	}
+
+
+	void CheckIfGameOver(){
+
+		this.transform.position = spawnPoint;
+		rb.velocity = Vector3.zero;
+		deaths++;
+
+		for (int i = 0; i < deaths; i++) {
+			deathImages [i].gameObject.SetActive (false);
+		}
+
+		if (deaths >= 3) {
+			Application.LoadLevel (0);
+		}
+
 	}
 
 
