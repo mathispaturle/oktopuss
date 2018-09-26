@@ -21,6 +21,12 @@ ModelImporter:
     100026: Lamp
     100028: //RootNode
     100030: Root
+    100032: Armature.001
+    100034: Bone
+    100036: Bulbo
+    100038: Bulbo_end
+    100040: cabeza
+    100042: Circle.000
     400000: Armature
     400002: Bone.002
     400004: Bone.003
@@ -37,6 +43,12 @@ ModelImporter:
     400026: Lamp
     400028: //RootNode
     400030: Root
+    400032: Armature.001
+    400034: Bone
+    400036: Bulbo
+    400038: Bulbo_end
+    400040: cabeza
+    400042: Circle.000
     2000000: Camera
     2300000: Circle
     2300002: Circle.003
@@ -46,11 +58,13 @@ ModelImporter:
     4300002: Circle.002
     4300004: Circle.003
     4300006: Circle
+    4300008: Circle.000
     7400000: Armature|Idle
     9500000: //RootNode
     10800000: Lamp
     13700000: Circle.001
     13700002: Circle.002
+    13700004: Circle.000
   materials:
     importMaterials: 1
     materialName: 0
