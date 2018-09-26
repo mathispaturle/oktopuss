@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour {
 
@@ -7,6 +8,11 @@ public class player : MonoBehaviour {
 	float speed = 8;
 	bool hasTreasure = false;
 	int score = 0;
+	int collected = 0;
+
+	public Text scoreText;
+	public Image[] inputsUser;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +22,7 @@ public class player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rb.velocity.y, -maxSpeed, maxSpeed));
-
+		scoreText.text = score.ToString ();
 		inputHandler ();
 	}
 
@@ -28,22 +34,72 @@ public class player : MonoBehaviour {
 		if (Input/*.GetButtonDown("Fire3")*/.GetKeyDown("space")) {
 			rb.AddForce( new Vector3 (h * speed, v * speed, 0));
 		}
+
+		if (Input.GetKeyDown ("r")) {
+			Application.LoadLevel (0);
+		}
+
+		if (Input.GetKey ("w")) {
+			setActiveKeys (0);
+		} else {
+			setInactiveKeys (0);
+		}
+
+		if (Input.GetKey ("a")) {
+			setActiveKeys (1);
+		} else {
+			setInactiveKeys (1);
+		}
+
+		if (Input.GetKey ("s")) {
+			setActiveKeys (2);
+		} else {
+			setInactiveKeys (2);
+		}
+
+		if (Input.GetKey ("d")) {
+			setActiveKeys (3);
+		} else {
+			setInactiveKeys (3);
+		}
+
+
+
+		if (Input.GetKeyDown ("space")) {
+			setActiveKeys (4);
+		} else {
+			setInactiveKeys (4);
+		}
+
 	}
+
+	void setActiveKeys(int num){
+		inputsUser [num].gameObject.SetActive (true);
+	}
+
+	void setInactiveKeys(int num){
+		inputsUser [num].gameObject.SetActive (false);
+	}
+
 
 	void OnTriggerEnter(Collider col){
+		if (col.gameObject.tag == "target") {
+			score += collected;
+			collected = 0;
+			//print ("Your score is: " + score);
+		}
+	}
+
+	void OnTriggerStay(Collider col){
 
 		if (col.gameObject.tag == "reward") {
-			hasTreasure = true;
-			print ("Player took treasure");
-		}
 
-		if (col.gameObject.tag == "target") {
-			if (hasTreasure) {
-				print ("Player released treasure: " + score);
-				score++;
-				hasTreasure = false;
+			if (Input.GetKeyDown ("a")) {
+				collected += 10;
+				print (collected);
 			}
 		}
-
 	}
+
+
 }

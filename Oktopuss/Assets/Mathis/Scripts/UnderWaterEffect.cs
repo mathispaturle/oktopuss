@@ -20,7 +20,7 @@ public class UnderWaterEffect : MonoBehaviour {
 		Camera.main.backgroundColor = new Color(0.22f, 0.64f, 0.77f, 0.6f);
 		RenderSettings.fog = true;
 		RenderSettings.fogColor = new Color(0.22f, 0.64f, 0.77f, 0.6f);
-		RenderSettings.fogDensity = 0.02f;
+		RenderSettings.fogDensity = 0.005f;
 		RenderSettings.fogMode = FogMode.Exponential;
 		RenderSettings.skybox = noSkybox;
 	}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - reward
   - target
+  - pulpo
   layers:
   - Default
   - TransparentFX
