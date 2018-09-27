@@ -23,7 +23,7 @@ public class MovimientoPataPulpo : MonoBehaviour {
             {
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y,0);
             
-                 if (i >= 5.0f)
+                 if (i >= 2.0f)
                   { 
                      RandomMe();
                        i = 0;

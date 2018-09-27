@@ -104,6 +104,7 @@ public class player : MonoBehaviour {
 		if (col.gameObject.tag == "pulpo") {
 			print ("Hoy comemos humano...");
 			CheckIfGameOver ();
+            collected = 0;
 		}
 	}
 
